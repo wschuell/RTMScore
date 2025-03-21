@@ -32,10 +32,12 @@ jobs:
         activate-environment: test
         python-version: 3.8
     - name: Install dependencies
+      shell: bash -el {0}
       run: |
         conda install --file=requirements_conda.txt   
         pip install -r ./requirements_pip.txt
     - name: Test
+      shell: bash -el {0}
       run: |
         cd example
         python rtmscore.py -p ./1qkt_p.pdb -l ./1qkt_decoys.sdf -rl ./1qkt_l.sdf -gen_pocket -c 10.0 -m ../trained_models/rtmscore_model1.pth
