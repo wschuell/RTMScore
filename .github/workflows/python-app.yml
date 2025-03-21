@@ -22,13 +22,14 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - uses: conda-incubator/setup-miniconda@v2
+    - uses: conda-incubator/setup-miniconda@v3
       with:
         miniconda-version: "latest"
         channels: bioconda, conda-forge, defaults
         use-only-tar-bz2: true
         auto-update-conda: true
         auto-activate-base: true
+        python-version: 3.8
     - name: Install dependencies
       run: |
         conda install --file=requirements_conda.txt   
