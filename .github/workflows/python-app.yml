@@ -31,8 +31,9 @@ jobs:
         auto-activate-base: true
     - name: Install dependencies
       run: |
-        conda create -n test_env --file ./requirements_conda.txt      
-        conda activate test_env
+        conda create -n test_env python=3.8
+	conda activate test_env
+	conda install --file=requirements_conda.txt   
         pip install -r ./requirements_pip.txt
     - name: Test
       run: |
