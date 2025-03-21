@@ -33,7 +33,7 @@ jobs:
         python-version: 3.8
     - name: Install dependencies
       shell: bash -el {0}
-      run: conda install --file=requirements_conda.txt; pip install -r ./requirements_pip.txt
+      run: "conda install --file=requirements_conda.txt; pip install -r ./requirements_pip.txt"
     - name: Test
       shell: bash -el {0}
       run: |
