@@ -31,14 +31,10 @@ jobs:
         auto-activate-base: true
     - name: Install dependencies
       run: |
-        conda init
-        conda create -n test_env python=3.8
-        conda activate test_env
         conda install --file=requirements_conda.txt   
         pip install -r ./requirements_pip.txt
     - name: Test
       run: |
-        conda activate test_env
         cd example
         python rtmscore.py -p ./1qkt_p.pdb -l ./1qkt_decoys.sdf -rl ./1qkt_l.sdf -gen_pocket -c 10.0 -m ../trained_models/rtmscore_model1.pth
         python rtmscore.py -p ./1qkt_p_pocket_10.0.pdb -l ./1qkt_decoys.sdf -m ../trained_models/rtmscore_model1.pth
