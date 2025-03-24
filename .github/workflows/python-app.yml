@@ -35,7 +35,7 @@ jobs:
       shell: bash -el {0}
       run: |
         conda install --file=requirements_conda.txt
-        pip install -r ./requirements_pip.txt"
+        pip install -r ./requirements_pip.txt
     - name: Test
       shell: bash -el {0}
       run: |
